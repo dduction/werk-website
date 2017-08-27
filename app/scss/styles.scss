@@ -1,7 +1,15 @@
 @charset "UTF-8";
+@import "fonts";
 @import "variables";
+@import "ipadpro";
+
+
 html {
   font-family: $font-stack;
+}
+
+::selection {
+  background: $yellow;
 }
 
 .body__wrapper {
@@ -126,11 +134,14 @@ nav {
     background: $yellow;
     background: linear-gradient(90deg, $yellow, $red);
     border: none;
-    line-height: 36px;
+    line-height: 38px;
     font-size: .9em;
     font-weight: 500;
     color: white;
     &.btn--shadow {
+      box-shadow: 0 5px 30px 0 rgba(233, 63, 57, 0.50);
+    }
+    &:hover {
       box-shadow: 0 2px 6px 0 rgba(233, 63, 57, 0.50);
     }
   }
@@ -174,17 +185,17 @@ nav {
 
 .hero__bg--fullscreen {
   background: $grey--light;
-  background-image: url("../images/screens/screen-bg.png"), linear-gradient($grey--light, white);
+  // background-image: url("../images/screens/screen-bg.png"), linear-gradient($grey--light, white);
+  background-image: linear-gradient($grey--light, white);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center top;
   background-size: cover;
-  min-height: calc(100vh - 110px);
-  z-index: 1;
+  height: calc(100vh - 110px);
   .hero__container {
-    padding-top: 4em;
+    padding-top: 2em;
     .btn {
-      margin-top: 2em;
+      margin-top: 1em;
     }
   }
 }
@@ -195,30 +206,65 @@ nav {
 
 .hero__text--title {
   color: $grey--dark;
-  font-size: 2.92rem;
+  font-size: 1.5em;
   strong {
-    font-size: 4.2rem;
+    font-size: 1.4em;
     font-weight: 700;
     margin-bottom: .8rem;
     display: block;
   }
 }
 
-.hero__text--body {
-  color: $grey--medium;
-  font-size: 1.5rem;
+.hero__text--subtitle {
+  color: $grey--med--light;
+  font-size: .9em;
 }
 
-.hero__bg--image {
-  // background: url("../images/screens/screen-calorie.png") no-repeat fixed;
-  // background-size: 100%;
-  min-height: 100%;
+.hero__text--body {
+  position: relative;
+  padding-top: 20em;
+}
 
-  opacity: 1;
-  z-index: -6;
-  height: 100%;
+.hero__image--bg {
+  pointer-events: none;
+  background-image: url("../images/screens/screen-bg.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center top;
+  background-size: cover;
+  height: 100vh;
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 0;
+}
+
+.hero__image--main {
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  img {
+    padding: 0 5em;
+    width: 100%;
+  }
+  z-index: 2;
+}
+
+.section__divider {
+  background: linear-gradient($grey--darkest, black);
+  box-shadow: 0 -1px 30px 0 rgba(0, 0, 0, 0.90);
+  position: relative;
+  z-index: 1;
+}
+
+.features__text--container {
+  position: relative;
+  height: 400px;
+}
+
+.features__text--body {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }

@@ -1,0 +1,19 @@
+$ipad-pro-min: 1024px !default;
+$ipad-pro-max: 1366px !default;
+// Portrait and Landscape
+$ipad-pro: "only screen and (min-device-width : #{$ipad-pro-min}) and (max-width-width : #{$ipad-pro-max})" and (-webkit-min-device-pixel-ratio: 1.5)!default;
+// Portrait
+$ipad-pro-portrait: "only screen and (min-device-width : #{$ipad-pro-min}) and (max-width-width : #{$ipad-pro-max})" and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5)!default;
+//Landscape
+$ipad-pro-landscape: "only screen and (min-device-width : #{$ipad-pro-min}) and (max-width-width : #{$ipad-pro-max})" and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5)!default;
+.hide-on-ipad-pro {
+    @media #{$ipad-pro} {
+        display: none !important;
+    }
+    @media #{$ipad-pro-portrait} {
+        display: none !important;
+    }
+    @media #{$ipad-pro-landscape} {
+        display: none !important;
+    }
+}
